@@ -21,6 +21,7 @@ jenkins:
             permissions:
               - "Overall/Read"
               - "Job/Read"
+              - "Job/Build"
             assignments:
               - "authenticated"
         items:
