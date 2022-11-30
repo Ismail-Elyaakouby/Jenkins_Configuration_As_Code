@@ -6,13 +6,6 @@ jenkins:
   scmCheckoutRetryCount: 3
   labelString: "master-label"  
 
-  securityRealm:
-    local:
-      allowsSignup: false
-      users:
-       - id: admin
-         password: admin
-
   authorizationStrategy:
     roleBased:
       roles:
