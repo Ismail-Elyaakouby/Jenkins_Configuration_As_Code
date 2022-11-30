@@ -27,7 +27,7 @@ jenkins:
         items:
           - name: "FolderA"
             description: "Jobs in Folder A, but not the folder itself"
-            pattern: "A/.*"
+            pattern: "FolderA/.*"
             permissions:
               - "Job/Configure"
               - "Job/Build"
@@ -47,7 +47,7 @@ jenkins:
               - "user2"
           - name: "FolderB"
             description: "Jobs in Folder B, but not the folder itself"
-            pattern: "B.*"
+            pattern: "FolderB.*"
             permissions:
               - "Job/Configure"
               - "Job/Build"
