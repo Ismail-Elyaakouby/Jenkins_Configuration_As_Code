@@ -7,6 +7,10 @@ jenkins:
   labelString: "master-label"  
 
   authorizationStrategy:
+    globalMatrix:
+      permissions:
+        - "Overall/Read:anonymous"
+        - "Overall/Administer:authenticated"
     roleBased:
       roles:
         global:
