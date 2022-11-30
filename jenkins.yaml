@@ -21,13 +21,23 @@ jenkins:
             permissions:
               - "Overall/Read"
               - "Job/Read"
-              - "Job/Build"
+              #- "Job/Build"
             assignments:
               - "authenticated"
         items:
           - name: "FolderA"
             description: "Jobs in Folder A, but not the folder itself"
             pattern: "A/.*"
+            permissions:
+              - "Job/Configure"
+              - "Job/Build"
+              - "Job/Delete"
+            assignments:
+              - "user1"
+              - "user2"
+          - name: "job1"
+            description: "Jobs in Folder A, but not the folder itself"
+            pattern: "job1"
             permissions:
               - "Job/Configure"
               - "Job/Build"
