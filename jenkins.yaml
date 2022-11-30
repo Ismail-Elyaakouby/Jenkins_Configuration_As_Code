@@ -43,7 +43,7 @@ jenkins:
               - "Job/Build"
               - "Job/Delete"
             assignments:
-              #- "user1"
+              - "user1"
               - "user2"
           - name: "FolderB"
             description: "Jobs in Folder B, but not the folder itself"
