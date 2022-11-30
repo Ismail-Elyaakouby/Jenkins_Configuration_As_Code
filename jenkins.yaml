@@ -80,6 +80,18 @@ credentials:
             username: oki
             password: oki
             description: github username/password  
+        - usernamePassword:
+            scope:    GLOBAL
+            id:       user1
+            username: user1
+            password: user1
+            description: user1 username/password  
+        - usernamePassword:
+            scope:    GLOBAL
+            id:       user2
+            username: user2
+            password: user2
+            description: user2 username/password  
 
 tool:
   git:
