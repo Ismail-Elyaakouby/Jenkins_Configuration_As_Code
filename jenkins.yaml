@@ -45,6 +45,18 @@ jenkins:
             assignments:
               - "user1"
               - "user2"
+          - name: "testJob1"
+            description: "Jobs testJob1"
+            pattern: "job1"
+            permissions:
+              - "Job/Configure"
+              - "Job/Build"
+              - "Job/Delete"
+            assignments:
+              - "admin"
+              - "user1"
+              - "user2"
+              
           - name: "FolderB"
             description: "Jobs in Folder B, but not the folder itself"
             pattern: "FolderB.*"
