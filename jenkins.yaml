@@ -125,13 +125,8 @@ credentials:
             password: user2
             description: user2 username/password  
 
-tool:
-  git:
-    installations:
-      - name: Default
-        home: "git"
-
 jobs:
+  - url: https://raw.githubusercontent.com/Praqma/job-dsl-collection/master/configuration-as-code-dsl/pipeline.dsl #casc
   - url: https://raw.githubusercontent.com/roboll/dotjenkins-test/master/.jenkins/job.groovy
   - script: >
       job('testJob1') {
@@ -168,3 +163,8 @@ jobs:
         }
       }
 
+tool:
+  git:
+    installations:
+      - name: Default
+        home: "git"
