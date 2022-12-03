@@ -7,15 +7,14 @@ jenkins:
   labelString: "master-label"  
 
   authorizationStrategy:
-    globalMatrix:
-      permissions:
-        - "Job/Build:authenticated"
-        - "Job/Cancel:authenticated"
-        #- "Job/Delete:admin"
-        - "Job/Read:authenticated"
-        - "Overall/Administer:admin"
-        - "Overall/Read:authenticated"
-
+    #globalMatrix:
+    #  permissions:
+    #    - "Job/Build:authenticated"
+    #    - "Job/Cancel:authenticated"
+    #    #- "Job/Delete:admin"
+    #    - "Job/Read:authenticated"
+    #    - "Overall/Administer:admin"
+    #    - "Overall/Read:authenticated"
     roleBased:
       roles:
         global:
