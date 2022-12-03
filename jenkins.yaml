@@ -7,72 +7,82 @@ jenkins:
   labelString: "master-label"  
 
   authorizationStrategy:
-    roleBased:
-      roles:
-        global:
-          - name: "admin"
-            description: "Jenkins administrators"
-            permissions:
-              - "Overall/Administer"
-            assignments:
-              - "admin"
-          - name: "readonly"
-            description: "Read-only users"
-            permissions:
-              - "Overall/Read"
-              - "Job/Read"
-              #- "Job/Build"
-            assignments:
-              - "authenticated"
-        items:
-          - name: "FolderA"
-            description: "Jobs in Folder A, but not the folder itself"
-            pattern: "FolderA/.*"
-            permissions:
-              - "Job/Configure"
-              - "Job/Build"
-              - "Job/Delete"
-            assignments:
-              - "user1"
-              - "user2"
-          - name: "job/.*"
-            description: "Jobs in Folder A, but not the folder itself"
-            pattern: "job/.*"
-            permissions:
-              - "Job/Configure"
-              - "Job/Build"
-              - "Job/Delete"
-            assignments:
-              - "user1"
-              - "user2"
-          - name: "testJob1"
-            description: "Jobs testJob1"
-            pattern: "testJob1"
-            permissions:
-              - "Job/Configure"
-              - "Job/Build"
-              - "Job/Delete"
-            assignments:
-              - "admin"
-              - "user1"
-              - "user2"
-              
-          - name: "FolderB"
-            description: "Jobs in Folder B, but not the folder itself"
-            pattern: "FolderB.*"
-            permissions:
-              - "Job/Configure"
-              - "Job/Build"
-            assignments:
-              - "user2"
-        agents:
-          - name: "Agent1"
-            description: "Agent 1"
-            pattern: "agent1"
-            permissions:
-              - "Agent/Build"
-            assignments:
-              - "user1"
+    globalMatrix:
+      permissions:
+        - "Job/Build:authenticated"
+        - "Job/Cancel:authenticated"
+        - "Job/Delete:user1"
+        - "Job/Read:authenticated"
+        - "Job/Workspace:authenticated"
+        - "Overall/Administer:admin"
+        - "Overall/Read:authenticated"
+
+    #roleBased:
+    #  roles:
+    #    global:
+    #      - name: "admin"
+    #        description: "Jenkins administrators"
+    #        permissions:
+    #          - "Overall/Administer"
+    #        assignments:
+    #          - "admin"
+    #      - name: "readonly"
+    #        description: "Read-only users"
+    #        permissions:
+    #          - "Overall/Read"
+    #          - "Job/Read"
+    #          #- "Job/Build"
+    #        assignments:
+    #          - "authenticated"
+    #    items:
+    #      - name: "FolderA"
+    #        description: "Jobs in Folder A, but not the folder itself"
+    #        pattern: "FolderA/.*"
+    #        permissions:
+    #          - "Job/Configure"
+    #          - "Job/Build"
+    #          - "Job/Delete"
+    #        assignments:
+    #          - "user1"
+    #          - "user2"
+    #      - name: "job/.*"
+    #        description: "Jobs in Folder A, but not the folder itself"
+    #        pattern: "job/.*"
+    #        permissions:
+    #          - "Job/Configure"
+    #          - "Job/Build"
+    #          - "Job/Delete"
+    #        assignments:
+    #          - "user1"
+    #          - "user2"
+    #      - name: "testJob1"
+    #        description: "Jobs testJob1"
+    #        pattern: "testJob1"
+    #        permissions:
+    #          - "Job/Configure"
+    #          - "Job/Build"
+    #          - "Job/Delete"
+    #        assignments:
+    #          - "admin"
+    #          - "user1"
+    #          - "user2"
+    #          
+    #      - name: "FolderB"
+    #        description: "Jobs in Folder B, but not the folder itself"
+    #        pattern: "FolderB.*"
+    #        permissions:
+    #          - "Job/Configure"
+    #          - "Job/Build"
+    #        assignments:
+    #          - "user2"
+    #    agents:
+    #      - name: "Agent1"
+    #        description: "Agent 1"
+    #        pattern: "agent1"
+    #        permissions:
+    #          - "Agent/Build"
+    #        assignments:
+    #          - "user1"
 
   securityRealm:
     local:
