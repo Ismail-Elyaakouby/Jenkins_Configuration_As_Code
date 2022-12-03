@@ -13,7 +13,6 @@ jenkins:
         - "Job/Cancel:authenticated"
         - "Job/Delete:user1"
         - "Job/Read:authenticated"
-        - "Job/Workspace:authenticated"
         - "Overall/Administer:admin"
         - "Overall/Read:authenticated"
 
