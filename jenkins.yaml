@@ -16,37 +16,37 @@ jenkins:
         - "Overall/Administer:admin"
         - "Overall/Read:authenticated"
 
-    #roleBased:
-    #  roles:
-    #    global:
-    #      - name: "admin"
-    #        description: "Jenkins administrators"
-    #        permissions:
-    #          - "Overall/Administer"
-    #        assignments:
-    #          - "admin"
-    #      - name: "readonly"
-    #        description: "Read-only users"
-    #        permissions:
-    #          - "Overall/Read"
-    #          - "Job/Read"
-    #          #- "Job/Build"
-    #        assignments:
-    #          - "authenticated"
-    #    items:
+    roleBased:
+      roles:
+        global:
+          - name: "admin"
+            description: "Jenkins administrators"
+            permissions:
+              - "Overall/Administer"
+            assignments:
+              - "admin"
+          - name: "readonly"
+            description: "Read-only users"
+            permissions:
+              - "Overall/Read"
+              - "Job/Read"
+              #- "Job/Build"
+            assignments:
+              - "authenticated"
+        items:
+          - name: "job1"
+            description: "Jobs in Folder A, but not the folder itself"
+            pattern: "job1"
+            permissions:
+              - "Job/Configure"
+              - "Job/Build"
+              - "Job/Delete"
+            assignments:
+              - "user1"
+              - "user2"
     #      - name: "FolderA"
     #        description: "Jobs in Folder A, but not the folder itself"
     #        pattern: "FolderA/.*"
-    #        permissions:
-    #          - "Job/Configure"
-    #          - "Job/Build"
-    #          - "Job/Delete"
-    #        assignments:
-    #          - "user1"
-    #          - "user2"
-    #      - name: "job/.*"
-    #        description: "Jobs in Folder A, but not the folder itself"
-    #        pattern: "job/.*"
     #        permissions:
     #          - "Job/Configure"
     #          - "Job/Build"
