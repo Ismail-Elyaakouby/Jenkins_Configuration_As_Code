@@ -73,14 +73,14 @@ jenkins:
     #          - "Job/Build"
     #        assignments:
     #          - "user2"
-    #    agents:
-    #      - name: "Agent1"
-    #        description: "Agent 1"
-    #        pattern: "agent1"
-    #        permissions:
-    #          - "Agent/Build"
-    #        assignments:
-    #          - "user1"
+        agents:
+          - name: "Agent1"
+            description: "Agent 1"
+            pattern: "agent1"
+            permissions:
+              - "Agent/Build"
+            assignments:
+              - "user1"
 
   securityRealm:
     local:
