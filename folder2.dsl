@@ -3,8 +3,8 @@ folder('my-folder') {
 
 folder('project-a') {
     views {
-        listView('project-A') {
-            description('All unstable jobs for project A')
+        listView('project-B') {
+            description('All unstable jobs for project B')
             jobFilters {
                 regex {
                     matchType(MatchType.EXCLUDE_MATCHED)
