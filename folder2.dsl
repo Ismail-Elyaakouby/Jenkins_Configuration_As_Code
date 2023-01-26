@@ -9,6 +9,9 @@ folder('project-a') {
                 name('release-projectA')
                 regex('.*test.*')
             }
+        jobFilters {
+            regex('.*test.*')
+        } 
             columns {
                 status()
                 name()
