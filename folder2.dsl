@@ -3,7 +3,7 @@ folder('my-folder') {
 
 folder('project-a') {
     views {
-        sectionedView(String name) {
+        sectionedView(project-A) {
             description(String description)
             sections {
                 // Adds a list view section.
@@ -15,7 +15,7 @@ folder('project-a') {
                     // Adds jobs to the section.
                     jobs {}
                     // Sets the name of the section.
-                    name(String name)
+                    name(project-A)
                 }
                 viewListing {
                     jobFilters {
