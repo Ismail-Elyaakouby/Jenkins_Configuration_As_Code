@@ -18,7 +18,7 @@ listView('project-A') {
     filterExecutors()
     jobs {
         name('release-projectA')
-        regex(".*(sma|test).")
+        regex('.*test.*')
     }
     jobFilters {
         status {
