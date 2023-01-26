@@ -3,4 +3,3 @@ folder('project-a') {
     description('Folder for project A')
 }
 
-folder(String dddddd)
