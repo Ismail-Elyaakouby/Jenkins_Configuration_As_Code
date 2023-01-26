@@ -6,8 +6,12 @@ folder('project-a') {
         listView('project-A') {
             description('All unstable jobs for project A')
             jobFilters {
-                regex('.*test.*')
-            } 
+                regex {
+                    matchType(MatchType.EXCLUDE_MATCHED)
+                    matchValue(RegexMatchValue.DESCRIPTION)
+                    regex('.*test*')
+                }
+            }
         }
     }
 }
