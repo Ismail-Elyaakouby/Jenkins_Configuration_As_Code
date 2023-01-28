@@ -18,8 +18,11 @@ folder('project-a') {
     }
 }
 
-listView("my-folder2/myView1") {
+listView("My-folder3/myView1") {
     jobs {
-        regex('.*test*')
+        regex ('.*test*')
+    }
+    jobFilters {
+        regex ('.*test*')
     }
 }
