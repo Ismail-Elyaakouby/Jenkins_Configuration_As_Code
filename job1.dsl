@@ -1,3 +1,5 @@
+folder('My-folder-4') {
+}
 job("test1") {
 	description()
 	keepDependencies(false)
@@ -13,7 +15,7 @@ job("test1") {
 	concurrentBuild(false)
 }
 
-job("project-a/test2") {
+job("My-folder-4/test4") {
 	description()
 	keepDependencies(false)
 	scm {
