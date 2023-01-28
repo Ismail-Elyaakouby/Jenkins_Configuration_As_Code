@@ -3,6 +3,9 @@ folder('my-folder1') {
 folder('my-folder2') {
 }
 
+folder('My-folder3') {
+}
+
 folder('project-a') {
     views {
         listView('project-B') {
