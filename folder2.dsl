@@ -24,4 +24,13 @@ listView("My-folder3/builds") {
             regex('.*(test|regex2).*')
         } 
     }
+   columns{
+        status()
+        weather()
+        name()
+        lastSuccess()
+        lastFailure()
+        lastDuration()
+        buildButton()
+    }
 }
