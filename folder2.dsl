@@ -8,7 +8,7 @@ folder('My-folder3') {
 
 folder('project-a') {
     views {
-        listView('project-B') {
+        listView('builds') {
             description('All unstable jobs for project B')
             jobFilters {
                 regex {
@@ -21,7 +21,7 @@ folder('project-a') {
     }
 }
 
-listView("My-folder3/myView1") {
+listView("My-folder3") {
     jobs {
         regex('.*test*')
     }
