@@ -23,6 +23,8 @@ listView("My-folder3/myView1") {
         regex('.*test*')
     }
     jobFilters {
-        regex('.*test*')
+        regex {
+            regex('.*test*')
+        } 
     }
 }
