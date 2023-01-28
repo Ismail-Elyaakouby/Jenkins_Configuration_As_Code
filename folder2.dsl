@@ -23,11 +23,11 @@ folder('project-a') {
 
 listView("My-folder3") {
     jobs {
-        regex('.*test*')
+        regex(".*(sma|test).*")
     }
     jobFilters {
         regex {
-            regex('.*test*')
+            regex(".*(sma|test).*")
         } 
     }
 }
