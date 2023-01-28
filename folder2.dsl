@@ -15,7 +15,7 @@ folder('project-a') {
 folder('My-folder3') {
 }
 
-listView("My-folder3/aghouchaf") {
+listView("My-folder3/builds") {
     jobs {
         regex('.*test*')
     }
