@@ -17,3 +17,9 @@ folder('project-a') {
         }
     }
 }
+
+listView("my-folder2/myView1") {
+    jobs {
+        regex('.*test*')
+    }
+}
