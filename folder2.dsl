@@ -20,9 +20,9 @@ folder('project-a') {
 
 listView("My-folder3/myView1") {
     jobs {
-        regex ('.*test*')
+        regex('.*test*')
     }
     jobFilters {
-        regex ('.*test*')
+        regex('.*test*')
     }
 }
