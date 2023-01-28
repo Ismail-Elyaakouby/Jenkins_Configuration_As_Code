@@ -17,11 +17,11 @@ folder('My-folder3') {
 
 listView("My-folder3/builds") {
     jobs {
-        regex('.*test*')
+        regex('.*(test|regex2).*') 
     }
     jobFilters {
         regex {
-            regex('.*test*')
+            regex('.*(test|regex2).*')
         } 
     }
 }
