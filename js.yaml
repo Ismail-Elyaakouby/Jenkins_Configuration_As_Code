@@ -1,0 +1,196 @@
+credentials:
+  system:
+    domainCredentials:
+      - credentials:
+        - usernamePassword:
+            scope:    GLOBAL
+            id:       isma-user
+            username: isma
+            password: isma
+            description: isma username/password  
+jenkins:
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+       - id: isma
+         password: isma
+       - id: "admin"
+         password: "admin"
+       - id: "user1"
+         password: "user1"
+       - id: "user2"
+         password: "user2"
+
+#  authorizationStrategy:
+#    globalMatrix:
+#      grantedPermissions:
+#        - "Overall/Read:anonymous"
+#        - "Job/Read:anonymous"
+#        - "View/Read:anonymous"
+#        - "Overall/Administer:anonymous"
+  authorizationStrategy:
+    roleBased:
+      roles:
+        global:
+          - name: "admin"
+            description: "Jenkins administrators"
+            permissions:
+              - "Overall/Administer"
+            assignments:
+              - "admin"
+          - name: "readonly"
+            description: "Read-only users"
+            permissions:
+              - "Overall/Read"
+              - "Job/Read"
+            assignments:
+              - "authenticated"
+        items:
+          - name: "My-folder-1"
+            description: "Jobs in Folder A, but not the folder itself"
+            pattern: "My-folder-1.*"
+            permissions:
+              - "Job/Configure"
+              - "Job/Build"
+              - "Job/Delete"
+            assignments:
+              - "user1"
+              - "user2"
+          - name: "My-folder-2"
+            description: "Jobs in Folder B, but not the folder itself"
+            pattern: "My-folder-2.*"
+            permissions:
+              - "Job/Build"
+            assignments:
+              - "user2"
+##--##
+  agentProtocols:
+  - "JNLP4-connect"
+  - "Ping"
+  authorizationStrategy: "loggedInUsersCanDoAnything"
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: false
+  disableRememberMe: false
+  disabledAdministrativeMonitors:
+  - "jenkins.diagnostics.ControllerExecutorsNoAgents"
+  - "hudson.diagnosis.ReverseProxySetupMonitor"
+  labelAtoms:
+  - name: "built-in"
+  markupFormatter: "plainText"
+  mode: NORMAL
+  myViewsTabBar: "standard"
+  noUsageStatistics: true
+  numExecutors: 2
+  primaryView:
+    all:
+      name: "all"
+  projectNamingStrategy: "standard"
+  quietPeriod: 5
+  scmCheckoutRetryCount: 0
+  slaveAgentPort: 50000
+  updateCenter:
+    sites:
+    - id: "default"
+      url: "https://updates.jenkins.io/update-center.json"
+  viewsTabBar: "standard"
+  views:
+    - all:
+        name: "all"
+    - list:
+        includeRegex: ".*(sma|test).*" #test1
+        name: "builds"
+        recurse: true
+    - list:
+        includeRegex: ".*(sma|test).*" #test1
+        name: "project-A"
+        recurse: true
+    - list:
+        includeRegex: ".*(DWH|TALEND).*" # DWH-RUN-TALEND
+        name: "DWH-RUN-TALEND"
+        recurse: true
+#  views:
+#   - list:
+#       name: "ViewName"
+#         jobNames:
+#             job: "Name of job1"
+#             job: "Name of job2
+globalCredentialsConfiguration:
+  configuration:
+    providerFilter: "none"
+    typeFilter: "none"
+security:
+  apiToken:
+    creationOfLegacyTokenEnabled: false
+    tokenGenerationOnCreationEnabled: false
+    usageStatisticsEnabled: true
+  sSHD:
+    port: -1
+  scriptApproval:
+    approvedScriptHashes:
+    - "017d0db438428731cd600b6ebda805065433520f"
+unclassified:
+  buildStepOperation:
+    enabled: false
+  email-ext:
+    adminRequiredForTemplateTesting: false
+    allowUnregisteredEnabled: false
+    charset: "UTF-8"
+    debugMode: false
+    defaultBody: |-
+      $PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
+
+      Check console output at $BUILD_URL to view the results.
+    defaultContentType: "text/plain"
+    defaultSubject: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!"
+    defaultTriggerIds:
+    - "hudson.plugins.emailext.plugins.trigger.FailureTrigger"
+    maxAttachmentSize: -1
+    maxAttachmentSizeMb: -1
+    precedenceBulk: false
+    watchingEnabled: false
+  fingerprints:
+    fingerprintCleanupDisabled: false
+    storage: "file"
+  gitSCM:
+    addGitTagAction: false
+    allowSecondFetch: false
+    createAccountBasedOnEmail: false
+    disableGitToolChooser: false
+    hideCredentials: false
+    showEntireCommitSummaryInChanges: false
+    useExistingAccountWithSameEmail: false
+
+jobs:
+  - url: https://raw.githubusercontent.com/Ismail-Elyaakouby/jcasc/main/ok_folders.dsl
+  - url: https://raw.githubusercontent.com/Ismail-Elyaakouby/jcasc/main/ok_job_1.dsl
+tool:
+  git:
+    installations:
+    - home: "git"
+      name: "Default"
+  maven:
+    installations:
+    - name: "mvn"
+      properties:
+      - installSource:
+          installers:
+          - maven:
+              id: "3.6.2"
+  jdk:
+    installations:
+    - name: "jdk17"
+      home: "/usr/local/jdk17"
+  mavenGlobalConfig:
+    globalSettingsProvider: "standard"
+    settingsProvider: "standard"
+  sonarRunnerInstallation:
+    installations:
+    - name: "SonarQube_4"
+      properties:
+      - installSource:
+          installers:
+          - sonarRunnerInstaller:
+              id: "4.7.0.2747"
+
