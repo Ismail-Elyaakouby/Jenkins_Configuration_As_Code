@@ -1,4 +1,4 @@
-job("test1") {
+job("My-folder-1/test1") {
 	description()
 	keepDependencies(false)
 	scm {
@@ -14,7 +14,7 @@ job("test1") {
 }
 
 
-job("test2") {
+job("My-folder-2/test2") {
 	description()
 	keepDependencies(false)
 	scm {
