@@ -14,7 +14,7 @@ job("folder1/test1") {
 }
 
 
-job("folder1/test2") {
+job("folder2/test2") {
 	description()
 	keepDependencies(false)
 	scm {
