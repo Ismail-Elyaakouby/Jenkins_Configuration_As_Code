@@ -1,5 +1,5 @@
-folder('My-folder-1') {
+folder('folder1') {
 }
 
-folder('My-folder-2') {
+folder('folder2') {
 }
