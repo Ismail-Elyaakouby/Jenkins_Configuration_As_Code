@@ -11,12 +11,6 @@ job("folder1/test1") {
 	}
 	disabled(false)
 	concurrentBuild(false)
-        authorization {
-          // Specify the desired authorization settings for the job
-          permission('hudson.model.Item.Build', 'user1')
-          permission('hudson.model.Item.delete', 'user1')
-          permission('hudson.model.Item.Configure', 'user1')
-        }
 }
 
 
@@ -33,10 +27,4 @@ job("folder2/test2") {
 	}
 	disabled(false)
 	concurrentBuild(false)
-        authorization {
-          // Specify the desired authorization settings for the job
-          permission('hudson.model.Item.Build', 'user2')
-          permission('hudson.model.Item.delete', 'user2')
-          permission('hudson.model.Item.Configure', 'user2')
-        }
 }
