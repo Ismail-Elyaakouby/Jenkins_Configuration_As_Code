@@ -48,9 +48,6 @@ job('aghouchaf02') {
         maven {
             mavenInstallation('Maven-Name')
             goals('clean compile package')
-            switches {
-                // You can add any Maven switches or options here if needed
-            }
         }
     }
 
