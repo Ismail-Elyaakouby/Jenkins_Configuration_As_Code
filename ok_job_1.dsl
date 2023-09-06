@@ -46,17 +46,6 @@ job('aghouchaf02') {
     // Build section
     steps {
         maven {
-            mavenInstallation('Maven-Name')
-            goals('clean compile package')
-The switches {} block in a Jenkins DSL (Job DSL) script is used to specify command-line switches and options for build tools like Maven, Gradle, or custom shell scripts. Here's an example of how to use the switches {} block with Maven in a Jenkins DSL script:
-
-groovy
-
-job('example-job') {
-    // ... Other job configuration ...
-
-    steps {
-        maven {
             mavenInstallation('Maven-Name') // Define a Maven installation in Jenkins
             goals('clean compile package') // Specify Maven goals as needed
             switches {
