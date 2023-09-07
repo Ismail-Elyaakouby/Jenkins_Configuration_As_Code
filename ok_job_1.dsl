@@ -11,6 +11,7 @@ job("My-Maven-Project") {
     }
 
     publishers {
-        archiveArtifacts(allowEmptyArchive: true, artifacts: "**/target/*.jar")
+        archiveJunit('**/target/surefire-reports/*.xml')
+        archiveArtifacts(allowEmptyArchive: true, artifacts: '**/target/*.jar')
     }
 }
