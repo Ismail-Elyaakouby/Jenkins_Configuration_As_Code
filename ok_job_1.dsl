@@ -53,11 +53,5 @@ job('aghouchaf02') {
         //    goals('verify')
         //}
     }
-
-    // Post-build actions
-    archiveArtifacts {
-        // Define the source files or patterns to archive
-        artifacts('**/target/*.jar')
-    }
 }
 
