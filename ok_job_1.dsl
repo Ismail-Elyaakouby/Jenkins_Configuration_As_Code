@@ -31,8 +31,6 @@ job("folder2/test2") {
 
 job('aghouchaf02') {
     description('Build and Package Maven Project from GitHub Repository')
-
-    // Define the SCM section to clone the repository
     scm {
         git {
             remote {
@@ -45,7 +43,7 @@ job('aghouchaf02') {
 
     // Build section
     steps {
-	whereis mvn
+	//whereis mvn
 	echo "#######"
 	//mvn --help
         //maven {
