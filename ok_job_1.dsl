@@ -36,10 +36,10 @@ job('aghouchaf02') {
     scm {
         git {
             remote {
-                name('origin')
-                url('https://github.com/Ismail-Elyaakouby/aghouchaf02.git')
+                name("origin")
+                url("https://github.com/Ismail-Elyaakouby/aghouchaf02.git")
             }
-            branches('*/main') // Specify the branch you want to build
+            branches("*/main") // Specify the branch you want to build
         }
     }
 
@@ -47,7 +47,7 @@ job('aghouchaf02') {
     steps {
 	whereis mvn
 	echo "#######"
-	mvn --help
+	//mvn --help
         //maven {
         //    goals('clean')
         //    goals('verify')
