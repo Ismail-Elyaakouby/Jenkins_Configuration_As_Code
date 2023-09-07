@@ -45,16 +45,13 @@ job('aghouchaf02') {
 
     // Build section
     steps {
+        maven('verify')
+        maven('clean verify', 'pom.xml')
         maven {
-            mavenInstallation('Maven-Name') // Define a Maven installation in Jenkins
-            goals('clean compile package') // Specify Maven goals as needed
-            switches {
-                // Use the switches block to specify Maven command-line switches/options
-                option('-DskipTests=true') // Example: Skip running tests during the build
-                option('-Pmy-profile') // Example: Activate a Maven profile
-                option('-Dmy.property=value') // Example: Set a system property
-                // You can add more switches/options as needed
-            }
+            goals('clean')
+            goals('verify')
+            mavenOpts('-Xms256m')
+            mavenOpts('-Xmx512m')
         }
     }
 
@@ -64,3 +61,4 @@ job('aghouchaf02') {
         archiveArtifacts(allowEmptyArchive: true, artifacts: '**/target/*.jar') // Archive the JAR files
     }
 }
+
