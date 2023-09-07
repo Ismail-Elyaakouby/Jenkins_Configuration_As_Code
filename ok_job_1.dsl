@@ -50,8 +50,6 @@ job('aghouchaf02') {
         maven {
             goals('clean')
             goals('verify')
-            mavenOpts('-Xms256m')
-            mavenOpts('-Xmx512m')
         }
     }
 
