@@ -56,9 +56,12 @@ job('aghouchaf02') {
     }
 
     // Post-build actions
-    publishers {
-        archiveJunit('**/target/surefire-reports/*.xml') // Archive JUnit test results if available
-        archiveArtifacts(allowEmptyArchive: true, artifacts: '**/target/*.jar') // Archive the JAR files
+    archiveArtifacts {
+        // Define the source files or patterns to archive
+        artifacts('**/target/*.jar')
+
+        // Optionally, specify the destination directory within the archive
+        allowEmptyArchive(true) // Allow an empty archive if no artifacts are found
     }
 }
 
