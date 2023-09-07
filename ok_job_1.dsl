@@ -45,12 +45,13 @@ job('aghouchaf02') {
 
     // Build section
     steps {
-        maven('verify')
-        maven('clean verify', 'pom.xml')
-        maven {
-            goals('clean')
-            goals('verify')
-        }
+	whereis mvn
+	echo "#######"
+	mvn --help
+        //maven {
+        //    goals('clean')
+        //    goals('verify')
+        //}
     }
 
     // Post-build actions
