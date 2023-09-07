@@ -59,9 +59,6 @@ job('aghouchaf02') {
     archiveArtifacts {
         // Define the source files or patterns to archive
         artifacts('**/target/*.jar')
-
-        // Optionally, specify the destination directory within the archive
-        allowEmptyArchive(true) // Allow an empty archive if no artifacts are found
     }
 }
 
