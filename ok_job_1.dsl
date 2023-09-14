@@ -1,19 +1,11 @@
-job("My-Maven-Project") {
-    displayName("My Maven Project Build")
-    description("Builds and packages a Maven project")
-
+job('testJob1') {
     scm {
-        git("https://github.com/Ismail-Elyaakouby/aghouchaf02.git")
+        git('https://github.com/Ismail-Elyaakouby/aghouchaf02.git')
     }
-
+    triggers {
+        scm('H/15 * * * *')
+    }
     steps {
-        maven("-e clean package")
-    }
-
-    publishers {
-        archiveArtifacts {
-            artifacts('**/target/*.jar')
-            allowEmptyArchive(true)
-        }
+        maven('-e clean test')
     }
 }
