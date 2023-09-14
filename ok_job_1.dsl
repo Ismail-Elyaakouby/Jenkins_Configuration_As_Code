@@ -7,7 +7,6 @@ job("My-folder-1/test1") {
 
     steps {
         echo 'maven'
-	maven("test -Dproject.name=Jenkins_Configuration_As_Code/main")
     }
     disabled(false)
     concurrentBuild(false)
