@@ -1,4 +1,4 @@
-job("My-folder-1/test1") {
+job("test1") {
     description()
     keepDependencies(false)
     scm {
