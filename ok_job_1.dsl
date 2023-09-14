@@ -1,37 +1,14 @@
 job("My-folder-1/test1") {
-	description()
-	keepDependencies(false)
-	scm {
-		git {
-			remote {
-				github("Ismail-Elyaakouby/jcasc", "https")
-			}
-			branch("*/master")
-		}
-	}
-    steps {
-        maven('-e clean test')
+    description()
+    keepDependencies(false)
+    scm {
+        git("https://github.com/Ismail-Elyaakouby/Jenkins_Configuration_As_Code.git", main)
     }
-	disabled(false)
-	concurrentBuild(false)
-}
 
-
-job("My-folder-2/test2") {
-	description()
-	keepDependencies(false)
-	scm {
-		git {
-			remote {
-				github("Ismail-Elyaakouby/jcasc", "https")
-			}
-			branch("*/master")
-		}
-	}
     steps {
-        maven('-e clean test')
+        echo 'maven'
+	maven("test -Dproject.name=Jenkins_Configuration_As_Code/main")
     }
-	disabled(false)
-	concurrentBuild(false)
+    disabled(false)
+    concurrentBuild(false)
 }
-
